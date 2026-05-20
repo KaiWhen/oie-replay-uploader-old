@@ -9,9 +9,9 @@ import sys
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from apiclient.http import MediaFileUpload
-from oauth2client.client import flow_from_clientsecrets
-from oauth2client.file import Storage
-from oauth2client.tools import run_flow, argparser
+from google-auth.client import flow_from_clientsecrets
+from google-auth.file import Storage
+from google-auth.tools import run_flow, argparser
 
 from mongo import scores_col, status_col, bot_col
 
@@ -66,7 +66,7 @@ https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
 """ % os.path.abspath(os.path.join(os.path.dirname(__file__),
                                    CLIENT_SECRETS_FILE))
 
-VALID_PRIVACY_STATUSES = ("public", "private", "unlisted")
+VALID_PRIVACY_STATUSES = ("unlisted", "private", "unlisted")
 
 
 def get_authenticated_service():
