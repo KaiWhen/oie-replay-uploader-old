@@ -13,8 +13,8 @@ from configure_upload import (
 
 QUOTA = 10000
 
-
 def main_job():
+    make_videos_public()
     status = status_col.find_one({"country": "IE"})
     now = datetime.now()
     minus_eight_hrs = timedelta(hours=-8)
